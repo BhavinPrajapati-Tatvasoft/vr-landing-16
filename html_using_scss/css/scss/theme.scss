@@ -1,0 +1,60 @@
+@import "variable.scss";
+$themes: (
+  light: (
+    bodyBackground: $primary-white,
+    primaryTextColor: $primary-black,
+    logoHeadingTextColor: $primary-black,
+    primaryBgColor: $primary-white,
+    secondaryBtnBgColor: $white,
+    secondaryBtnHoverBgColor: $primary-black-variant-2,
+    searchBtnHoverBgColor: $primary-white-variant-2,
+    menuLinkBgColor: $primary-carret-light-red,
+    carouselInnerBg: $white,
+    carouselInnerAfterBg: $primary-white-variant-3,
+    iconBorderColor: $primary-white-variant-4,
+    footerLinkColor: $dark-grey,
+    copyrightColor: $light-theme-copyright-color,
+    quoteTextColor: $black,
+  ),
+  dark: (
+    bodyBackground: $secondary-black,
+    primaryTextColor: $white,
+    logoHeadingTextColor: $primary-white,
+    primaryBgColor: $primary-black,
+    secondaryBtnBgColor: $primary-black,
+    secondaryBtnHoverBgColor: $primary-white-variant-2,
+    searchBtnHoverBgColor: $primary-black,
+    menuLinkBgColor: $primary-carret-red,
+    carouselInnerBg: $secondary-black,
+    carouselInnerAfterBg: $secondary-black-variant-2,
+    iconBorderColor: $dark-grey-variant-2,
+    footerLinkColor: $white,
+    copyrightColor: $dark-theme-copyright-color,
+    quoteTextColor: $white,
+  ),
+);
+
+// Themify for themes
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

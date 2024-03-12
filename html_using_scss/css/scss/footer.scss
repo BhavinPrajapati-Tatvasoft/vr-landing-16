@@ -1,0 +1,165 @@
+@import "variable.scss";
+@import "theme.scss";
+.footer {
+  padding-top: 20px;
+  & .copyright {
+    padding: 16px;
+    margin-top: 30px;
+    border-top: 1px solid $copyright-border-color;
+    @include themify($themes) {
+      color: themed("copyrightColor");
+    }
+    font-size: toRem(13);
+    line-height: toRem(26);
+    text-align: center;
+  }
+  & .top-part {
+    padding: 0 12px;
+    & .content {
+      padding-bottom: 20px;
+      @include themify($themes) {
+        color: themed("footerLinkColor");
+      }
+    }
+    & .link-heading {
+      padding-bottom: 6px;
+      @include themify($themes) {
+        color: themed("primaryTextColor") !important;
+      }
+      font-weight: fWeight(medium);
+      font-size: toRem(16);
+      line-height: toRem(20);
+    }
+    & ul {
+      padding-bottom: 30px;
+      & li:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      & li {
+        & a {
+          font-size: toRem(14);
+          position: relative;
+          @include themify($themes) {
+            color: themed("footerLinkColor");
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: $primary-red;
+            transition: all 0.3s;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  & .social-links {
+    display: flex;
+    align-items: center;
+    & a:not(:last-child) {
+      margin-right: 22px;
+    }
+    & a {
+      &:hover {
+        & img {
+          transform: scale(1.2);
+          &:last-child {
+            opacity: 1;
+          }
+        }
+      }
+      & img {
+        height: 22px;
+        width: 22px;
+        display: block;
+        transition: all 0.2s;
+        transform: scale(1);
+        &:last-child {
+          margin-top: -22px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: $breakpoint-sm  + "px") {
+  .footer {
+    padding-top: 40px;
+    & .copyright {
+      margin-top: 43px;
+      padding: 22px;
+    }
+    & .top-part {
+      padding: 0 50px;
+      & .content {
+        padding-bottom: 40px;
+        text-align: center;
+      }
+      & .link-heading {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      & ul {
+        padding-bottom: 0;
+        & li:not(:last-child) {
+          margin-bottom: 14px;
+        }
+        & li {
+          text-align: center;
+          & a {
+            font-size: toRem(15);
+          }
+        }
+      }
+    }
+    & .logo {
+      justify-content: center;
+    }
+    & .social-links {
+      justify-content: center;
+    }
+  }
+}
+@media (min-width: $breakpoint-md + "px") {
+  .footer {
+    & .logo {
+      justify-content: start;
+    }
+    & .top-part {
+      & .content {
+        padding-bottom: 20px;
+        text-align: start;
+      }
+      & .link-heading {
+        text-align: start;
+      }
+      & ul {
+        & li {
+          text-align: start;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-lg  + "px") {
+  .footer {
+    padding-top: 100px;
+    & .top-part {
+      & .content {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-xl  + "px") {
+}
+@media (min-width: $breakpoint-xxl  + "px") {
+}

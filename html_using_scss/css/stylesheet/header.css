@@ -1,0 +1,269 @@
+.page-scrolled header {
+  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .page-scrolled header {
+  box-shadow: 0 1px 6px 1px #3e3e3e;
+}
+
+.theme-dark .btn.navbar-toggler .navbar-toggler-icon {
+  background-image: url("../../images/menu-icon-dark-theme.svg");
+}
+
+.theme-dark .offcanvas {
+  background-color: #3e3e3e;
+}
+
+.btn.navbar-toggler {
+  border-radius: 50%;
+  border: none;
+  padding: 12px;
+  margin: -12px -12px -12px 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn.navbar-toggler .navbar-toggler-icon {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("../../images/menu-icon-light-theme.svg");
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+.theme-light header {
+  background-color: #fafafa;
+}
+.theme-dark header {
+  background-color: #1f1f1f;
+}
+header .navbar {
+  padding: 12px;
+}
+header .navbar .mobile-btns .btn img {
+  height: 24px;
+  width: 24px;
+}
+header .navbar .offcanvas-start {
+  width: 270px;
+  transition: transform 0.3s ease-in-out;
+}
+header .navbar .navbar-nav {
+  margin-right: 0;
+}
+header .navbar .nav-link {
+  font-weight: 600;
+  padding: 10px 18px;
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+}
+.theme-light header .navbar .nav-link {
+  color: #3e3e3e !important;
+}
+.theme-dark header .navbar .nav-link {
+  color: #ffffff !important;
+}
+header .navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.theme-light header .navbar .nav-link::before {
+  background-color: #fccfd2;
+}
+.theme-dark header .navbar .nav-link::before {
+  background-color: #e15057;
+}
+header .navbar .nav-link:hover::before, header .navbar .nav-link:focus::before, header .navbar .nav-link:active::before, header .navbar .nav-link.active::before {
+  width: 100%;
+  opacity: 1;
+}
+header .navbar .btn-secondary {
+  margin: 0 20px;
+  min-width: 150px;
+}
+header .navbar .form-check-input {
+  border: none;
+  margin-top: 0;
+  height: 36px;
+  width: 36px;
+  margin-left: 8px;
+  background: url("../../images/dark-mode-icon.svg") center no-repeat;
+  background-size: 24px;
+  border-radius: 50%;
+}
+header .navbar .form-check-input:checked[type=checkbox] {
+  background: url("../../images/light-mode-icon.svg") center no-repeat;
+  background-size: 24px;
+}
+.theme-light header .navbar .form-check-input:hover, .theme-light header .navbar .form-check-input:focus {
+  background-color: #e8e8e8;
+}
+.theme-dark header .navbar .form-check-input:hover, .theme-dark header .navbar .form-check-input:focus {
+  background-color: #3e3e3e;
+}
+header .navbar .btn-search {
+  padding: 6px;
+  border-radius: 50%;
+  border: none;
+}
+header .navbar .btn-search img {
+  height: 30px;
+  width: 30px;
+  display: block;
+}
+.theme-light header .navbar .btn-search:hover, .theme-light header .navbar .btn-search:focus {
+  background-color: #e8e8e8;
+}
+.theme-dark header .navbar .btn-search:hover, .theme-dark header .navbar .btn-search:focus {
+  background-color: #3e3e3e;
+}
+header .search-bar {
+  position: absolute;
+  left: 0;
+  top: -92px;
+  height: 0;
+  width: 100%;
+  background-color: #3e3e3e;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+  z-index: 1001;
+  transition: all 500ms;
+}
+header .search-bar .inner {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: calc(100% - 24px);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+header .search-bar .inner .form-control {
+  width: 100%;
+  height: 48px;
+  color: #3e3e3e !important;
+  border-color: #ffffff;
+  background-color: #ffffff !important;
+  border-radius: 5px 0 0 5px;
+}
+header .search-bar .inner .search-btn {
+  border-radius: 0 5px 5px 0;
+}
+header .search-bar .inner .close-btn {
+  padding: 11px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.2) !important;
+}
+header .search-bar .inner .close-btn:hover {
+  background-color: #e8e8e8;
+}
+header .search-bar .inner .close-btn img {
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.open-search .wrapper .search-bar {
+  top: 0;
+  height: 100%;
+}
+
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: 576px) {
+  header .navbar {
+    padding: 12px 20px;
+  }
+  header .navbar .offcanvas-start {
+    width: 400px;
+  }
+  header .search-bar .inner .close-btn {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 768px) {
+  header .search-bar .inner {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+@media (min-width: 992px) {
+  header .search-bar .inner .form-control {
+    height: 52px;
+  }
+}
+@media (min-width: 1200px) {
+  .theme-dark .offcanvas {
+    background-color: transparent;
+  }
+
+  header .navbar .form-check-input {
+    background-size: 30px;
+    height: 42px;
+    width: 42px;
+    margin-left: 0;
+  }
+  header .navbar .form-check-input:checked[type=checkbox] {
+    background-size: 30px;
+  }
+  header .navbar .navbar-nav {
+    margin-right: -6px;
+  }
+  header .navbar .navbar-nav .nav-link {
+    width: auto;
+    padding: 14px 20px;
+  }
+  header .navbar .navbar-nav .nav-link::before {
+    display: none;
+  }
+  header .navbar .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 0;
+    height: 3px;
+    background-color: #f3525a;
+    transition: all 0.3s;
+  }
+  header .navbar .navbar-nav .nav-link:hover::after, header .navbar .navbar-nav .nav-link:focus::after, header .navbar .navbar-nav .nav-link:active::after, header .navbar .navbar-nav .nav-link.active::after {
+    width: calc(100% - 40px);
+  }
+}
+@media (min-width: 1400px) {
+  header .navbar {
+    padding: 20px 50px;
+  }
+  header .navbar .btn-secondary {
+    margin: 0 26px;
+    min-width: 174px;
+  }
+  header .navbar .navbar-nav .nav-link {
+    padding: 14px 30px;
+  }
+  header .navbar .navbar-nav .nav-link::after {
+    left: 30px;
+  }
+  header .navbar .navbar-nav .nav-link:hover::after, header .navbar .navbar-nav .nav-link:focus::after, header .navbar .navbar-nav .nav-link:active::after, header .navbar .navbar-nav .nav-link.active::after {
+    width: calc(100% - 60px);
+  }
+
+  .btn-search {
+    margin-left: 36px;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

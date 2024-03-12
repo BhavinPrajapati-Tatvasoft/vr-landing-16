@@ -1,0 +1,72 @@
+@import "variable.scss";
+.benefits {
+  padding: 10px 0 25px;
+  overflow: hidden;
+  position: relative;
+  & .banner-img {
+    max-width: calc(100% - 24px);
+    margin-left: 12px;
+    max-height: 100%;
+  }
+  & ul {
+    padding-bottom: 0;
+    & li {
+      display: flex;
+      align-items: center;
+      padding-bottom: 14px;
+      & img {
+        height: 14px;
+        width: 14px;
+        flex-basis: 14px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 14px;
+        align-self: start;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: $breakpoint-sm  + "px") {
+  .benefits {
+    padding: 0 0 55px;
+    & .banner-img {
+      max-width: calc(100% - 48px);
+      margin-left: 24px;
+    }
+  }
+}
+@media (min-width: $breakpoint-md + "px") {
+  .benefits {
+    padding: 64px 0 68px;
+    & .banner-img {
+      position: absolute;
+      right: 50%;
+      max-width: 50%;
+      top: 0;
+      margin-left: 0;
+    }
+  }
+}
+@media (min-width: $breakpoint-lg  + "px") {
+  .benefits {
+    padding: 104px 0 98px;
+    & ul {
+      padding-bottom: 10px;
+      & li {
+        padding-bottom: 22px;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-xl  + "px") {
+  .benefits {
+    padding: 164px 0 168px;
+  }
+}
+@media (min-width: $breakpoint-xxl  + "px") {
+  .benefits {
+    padding: 224px 0 218px;
+  }
+}

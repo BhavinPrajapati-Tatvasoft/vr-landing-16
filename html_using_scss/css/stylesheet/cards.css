@@ -1,0 +1,83 @@
+.theme-dark .card {
+  background-color: #282828;
+}
+
+.card {
+  border-radius: 0;
+  border: none;
+  transition: all 0.4s;
+  margin-bottom: 16px;
+}
+.card:hover {
+  background-color: #f3525a;
+}
+.card:hover .card-text {
+  color: #ffffff;
+}
+.card:hover a {
+  border-color: #ffffff;
+}
+.card:hover .card-body::after {
+  background-color: #ffffff;
+}
+.card .card-body {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.card ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  transform: translateY(-50%);
+  height: 44px;
+  background-color: #f3525a;
+  transition: all 0.4s;
+}
+.card .card-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  flex-basis: calc(100% - 36px);
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: calc(100% - 36px);
+}
+.card a {
+  padding: 8px;
+  background-color: #f3525a;
+  border: 2px solid #f3525a;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  flex-basis: 36px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 36px;
+}
+.card a img {
+  height: 16px;
+  width: 16px;
+  display: block;
+}
+
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: 576px) {
+  .card .card-text {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .card {
+    height: calc(100% - 24px);
+  }
+  .card .card-body {
+    padding: 40px 40px 36px 40px;
+  }
+}
+
+/*# sourceMappingURL=cards.css.map */

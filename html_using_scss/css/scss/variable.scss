@@ -1,0 +1,47 @@
+// To rem conversion
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+// font weight
+$font-weight: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semi-bold": 600,
+  "bold": 700,
+);
+@function fWeight($weight) {
+  @return map-get($font-weight, $weight);
+}
+
+// color variables
+$black: #000000;
+$transparent: transparent;
+$primary-black: #3e3e3e;
+$primary-black-variant-2: #778088;
+$secondary-black: #1f1f1f;
+$secondary-black-variant-2: #282828;
+$white: #ffffff;
+$primary-white: #fafafa;
+$primary-white-variant-2: #e8e8e8;
+$primary-white-variant-3: #f3f3f3;
+$primary-white-variant-4: #dadada;
+$light-grey: #959595;
+$dark-grey: #676767;
+$dark-grey-variant-2: #636363;
+$primary-red: #f3525a;
+$primary-carret-red: #e15057;
+$primary-carret-light-red: #fccfd2;
+$primary-red-variant-2: #f13b45;
+$light-theme-copyright-color: rgba(103, 103, 103, 0.5);
+$dark-theme-copyright-color: rgba(255, 255, 255, 0.5);
+$copyright-border-color: rgba(103, 103, 103, 0.2);
+
+// Grid Settings
+$breakpoint-sm: 576;
+$breakpoint-md: 768;
+$breakpoint-lg: 992;
+$breakpoint-xl: 1200;
+$breakpoint-xxl: 1400;

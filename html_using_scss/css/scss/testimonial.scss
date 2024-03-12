@@ -1,0 +1,277 @@
+@import "variable.scss";
+@import "theme.scss";
+.testimonials-slider {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  & .shape-4,
+  & .shape-5,
+  & .connector,
+  & .img-1,
+  & .img-2,
+  & .img-3,
+  & .img-4,
+  & .img-5,
+  & .img-6 {
+    position: absolute;
+  }
+  & .shape-4 {
+    width: auto;
+    height: 299px;
+    top: 115px;
+    left: 0;
+  }
+  & .shape-5 {
+    height: 163px;
+    width: auto;
+    right: 0;
+    top: 18px;
+  }
+  & .img-1,
+  & .img-2,
+  & .img-3,
+  & .img-4,
+  & .img-5,
+  & .img-6,
+  & .connector {
+    display: none;
+  }
+  & .carousel-inner {
+    display: flex;
+    & .carousel-item {
+      & .carousel-item-inner {
+        padding: 20px 30px;
+        border: 2px solid $primary-red;
+        border-radius: 5px;
+        max-width: 322px;
+        margin: 0 auto;
+        background-color: $white;
+        @include themify($themes) {
+          background-color: themed("carouselInnerBg");
+        }
+        text-align: center;
+        position: relative;
+        opacity: 0.3;
+        transition: all 0.5s ease-in;
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          @include themify($themes) {
+            background-color: themed("carouselInnerAfterBg");
+          }
+          width: 34px;
+          top: 46px;
+          bottom: 46px;
+          left: -36px;
+        }
+        &::after {
+          left: auto;
+          right: -36px;
+          border-radius: 0 5px 5px 0;
+        }
+        &::before {
+          border-radius: 5px 0 0 5px;
+        }
+        & .quote-icon {
+          height: 38px;
+          width: 38px;
+          margin-bottom: 2px;
+        }
+        & .quote-text {
+          font-size: toRem(18);
+          line-height: toRem(28);
+          font-weight: fWeight(medium);
+          @include themify($themes) {
+            color: themed("quoteTextColor");
+          }
+          font-style: italic;
+          padding-bottom: 16px;
+        }
+        & .profile-img {
+          height: 64px;
+          width: 64px;
+          border-radius: 50%;
+          margin-bottom: 0;
+        }
+        & .user-name {
+          font-size: toRem(15);
+          line-height: toRem(28);
+          @include themify($themes) {
+            color: themed("quoteTextColor");
+          }
+          padding-bottom: 0;
+          font-weight: fWeight(semi-bold);
+        }
+      }
+      &.active .carousel-item-inner {
+        opacity: 1;
+      }
+    }
+  }
+  & .carousel-control-next,
+  & .carousel-control-prev {
+    width: auto;
+    border: 1px solid;
+    @include themify($themes) {
+      border-color: themed("iconBorderColor");
+    }
+    background-color: $primary-white;
+    border-radius: 50%;
+    padding: 11px;
+    opacity: 1;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover,
+    &:focus {
+      border-color: $primary-red !important;
+      opacity: 0.9;
+    }
+  }
+  & .carousel-control-next-icon,
+  & .carousel-control-prev-icon {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+  }
+  & .carousel-control-next-icon {
+    background-image: url("../../images/arrow-right-red-icon.svg");
+  }
+  & .carousel-control-prev-icon {
+    background-image: url("../../images/arrow-left-red-icon.svg");
+  }
+}
+.testimonial-banner {
+  padding: 20px 0;
+  background-color: $primary-red;
+  position: relative;
+  & .banner-img,
+  & .shape-1,
+  & .shape-2,
+  & .shape-3 {
+    display: none;
+  }
+}
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: $breakpoint-sm  + "px") {
+  .testimonials-slider {
+    padding-top: 46px;
+    padding-bottom: 50px;
+    & .connector {
+      top: -55px;
+      left: 50%;
+      margin-left: 78px;
+      display: block;
+    }
+    & .carousel-inner {
+      & .carousel-item {
+        & .carousel-item-inner {
+          padding: 30px;
+        }
+      }
+    }
+  }
+  .testimonial-banner {
+    padding: 46px 0;
+  }
+}
+@media (min-width: $breakpoint-md + "px") {
+  .testimonials-slider {
+    padding-top: 66px;
+    padding-bottom: 70px;
+    & .carousel-inner {
+      & .carousel-item {
+        & .carousel-item-inner {
+          padding: 50px 42px 36px;
+        }
+      }
+    }
+  }
+  .testimonial-banner {
+    padding: 70px 0;
+    & .shape-1,
+    & .shape-2,
+    & .shape-3 {
+      position: absolute;
+      display: block;
+    }
+    & .shape-1 {
+      left: 0;
+      top: 62px;
+      height: 299px;
+      width: auto;
+    }
+    & .shape-2 {
+      left: 480px;
+      top: 0;
+      height: auto;
+      width: 205px;
+    }
+    & .shape-3 {
+      right: 0;
+      top: 0;
+      height: 263px;
+      width: auto;
+    }
+  }
+}
+@media (min-width: $breakpoint-lg  + "px") {
+  .testimonials-slider {
+    padding-top: 96px;
+    padding-bottom: 112px;
+    & .img-1,
+    & .img-2,
+    & .img-3,
+    & .img-4,
+    & .img-5,
+    & .img-6 {
+      left: 50%;
+      display: block;
+    }
+    & .img-1 {
+      top: 551px;
+      margin-left: 450px;
+    }
+    & .img-2 {
+      top: 65px;
+      margin-left: 487px;
+    }
+    & .img-3 {
+      top: 385px;
+      margin-left: 61px;
+    }
+    & .img-4 {
+      top: 126px;
+      margin-left: 29px;
+    }
+    & .img-5 {
+      top: 190px;
+      margin-left: 340px;
+    }
+    & .img-6 {
+      top: 244px;
+      margin-left: 535px;
+    }
+  }
+  .testimonial-banner {
+    padding: 96px 0;
+    .banner-img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      max-width: 50%;
+      display: block;
+    }
+  }
+}
+@media (min-width: $breakpoint-xl  + "px") {
+  .testimonials-slider {
+    padding-bottom: 142px;
+  }
+}
+@media (min-width: $breakpoint-xxl  + "px") {
+  .testimonials-slider {
+    padding-bottom: 172px;
+  }
+}

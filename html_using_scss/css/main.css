@@ -1,0 +1,20 @@
+/* Import All css here */
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap";
+@import "bootstrap.min.css";
+@import "reset.css";
+@import "animations.css";
+@import "stylesheet/header.css";
+@import "stylesheet/top-banner.css";
+@import "stylesheet/brand-logo.css";
+@import "stylesheet/cards.css";
+@import "stylesheet/benifits.css";
+@import "stylesheet/consultancy-banner.css";
+@import "stylesheet/testimonial.css";
+@import "stylesheet/footer.css";
+@import "stylesheet/global.css";
+
+/* Body Hidden till Load the page */
+body:not(.page-loaded) {
+  opacity: 0;
+  overflow: hidden;
+}

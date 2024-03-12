@@ -1,0 +1,33 @@
+.brand-logo-wrapper {
+  margin-bottom: 20px;
+}
+.brand-logo-wrapper a img {
+  transition: all 0.3s;
+  transform: scale(1);
+}
+.brand-logo-wrapper a:hover img {
+  transform: scale(1.2);
+}
+
+@media (min-width: 576px) {
+  .brand-logo-wrapper {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .brand-logo-wrapper {
+    margin-bottom: 66px;
+  }
+}
+@media (min-width: 992px) {
+  .brand-logo-wrapper {
+    margin-bottom: 76px;
+  }
+}
+@media (min-width: 1200px) {
+  .brand-logo-wrapper {
+    margin-bottom: 96px;
+  }
+}
+
+/*# sourceMappingURL=brand-logo.css.map */

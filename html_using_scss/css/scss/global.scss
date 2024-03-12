@@ -1,0 +1,340 @@
+@import "theme.scss";
+* {
+  outline: none !important;
+}
+.window-resizing *,
+body:not(.page-loaded) * {
+  transition: none !important;
+}
+html,
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+body {
+  font-size: toRem(15);
+  line-height: toRem(20);
+  @include themify($themes) {
+    background-color: themed("bodyBackground");
+    color: themed("primaryTextColor");
+  }
+  font-family: "Montserrat", sans-serif;
+  -ms-overflow-style: scrollbar;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+a {
+  color: $black;
+  text-decoration: none;
+}
+a:hover {
+  color: #999;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: toRem(18);
+  padding: 0 0 20px;
+}
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  display: block;
+}
+h1 {
+  font-size: toRem(22);
+  line-height: toRem(26);
+  padding-bottom: 0;
+}
+h2 {
+  font-size: toRem(22);
+  line-height: toRem(26);
+}
+h6 {
+  font-size: toRem(20);
+  line-height: toRem(26);
+}
+p {
+  padding: 0 0 20px;
+  @include themify($themes) {
+    color: themed("primaryTextColor");
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-control::-webkit-input-placeholder {
+  color: $light-grey;
+}
+.form-control::-moz-placeholder {
+  color: $light-grey;
+}
+.form-control:-ms-input-placeholder {
+  color: $light-grey;
+}
+.form-control:-moz-placeholder {
+  color: $light-grey;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 $black;
+}
+option:not(:checked) {
+  color: $black;
+}
+.primary-link {
+  color: $primary-red;
+  font-size: toRem(16);
+  line-height: toRem(22);
+  font-weight: fWeight(bold);
+  position: relative;
+  transition: all 0.4s;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: $primary-red;
+    transition: all 0.3s;
+  }
+  &:hover,
+  &:focus {
+    color: $primary-red;
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.text-red {
+  color: $primary-red;
+}
+.text-dark-grey {
+  color: $dark-grey;
+}
+.fw-medium {
+  font-weight: fWeight(medium);
+}
+.pb-32 {
+  padding-bottom: 32px !important;
+}
+.pb-36 {
+  padding-bottom: 36px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.mt-n1 {
+  margin-top: -0.25rem !important;
+}
+
+// Section Heading
+.section-heading {
+  text-align: center;
+  font-weight: fWeight(bold);
+  color: $primary-red;
+  padding-bottom: 16px;
+  & span {
+    display: inline-block;
+    vertical-align: middle;
+    &.before,
+    &.after {
+      height: 2px;
+      width: 34px;
+      background-color: $primary-red;
+    }
+    &.before {
+      margin-right: 20px;
+    }
+    &.after {
+      margin-left: 20px;
+    }
+  }
+}
+.theme-light .dark-theme-icon,
+.theme-dark .light-theme-icon {
+  display: none !important;
+}
+.theme-light .light-theme-icon,
+.theme-dark .dark-theme-icon {
+  display: block !important;
+}
+
+// logo
+.logo {
+  display: flex;
+  align-items: center;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  h4 {
+    font-size: toRem(29);
+    line-height: toRem(35);
+    font-weight: fWeight(semi-bold);
+    padding-bottom: 4px;
+    padding-left: 2px;
+    color: $primary-black;
+    @include themify($themes) {
+      color: themed("logoHeadingTextColor");
+    }
+  }
+}
+
+/* Button
+--------------------------------------------------------------------------------------------------------*/
+.btn {
+  box-shadow: none !important;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  font-weight: fWeight(bold);
+  border-radius: 5px;
+}
+.btn-primary {
+  background-color: $white !important;
+  color: $primary-black !important;
+  padding: 10px 14px;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: $primary-white-variant-2 !important;
+  color: $primary-black !important;
+}
+.btn-secondary {
+  @include themify($themes) {
+    background-color: themed("primaryTextColor") !important;
+    color: themed("secondaryBtnBgColor") !important;
+  }
+  min-width: 174px;
+  padding: 14px;
+  border: none;
+  &:hover,
+  &:focus,
+  &:active {
+    @include themify($themes) {
+      background-color: themed("secondaryBtnHoverBgColor") !important;
+    }
+  }
+}
+.btn-primary-red {
+  background-color: $primary-red;
+  border-radius: 5px;
+  color: $white;
+  border: none;
+  padding: 14px;
+}
+.btn-primary-red:hover,
+.btn-primary-red:focus {
+  color: $white;
+  background-color: $primary-red-variant-2;
+}
+/* Form Control
+--------------------------------------------------------------------------------------------------------*/
+.form-label {
+  color: $primary-red;
+  font-weight: fWeight(semi-bold);
+  margin-bottom: 16px;
+}
+.form-control {
+  box-shadow: none !important;
+  font-size: toRem(15);
+  line-height: toRem(20);
+  height: 48px;
+  border-color: $primary-red;
+  border-radius: 5px;
+  @include themify($themes) {
+    color: themed("logoHeadingTextColor") !important;
+  }
+  background-color: $transparent !important;
+  &:focus {
+    border-color: $primary-red;
+  }
+}
+.form-check-input {
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+/* Main Content
+--------------------------------------------------------------------------------------------------------*/
+.main-content {
+  padding-top: 64px;
+}
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: $breakpoint-sm  + "px") {
+  h1 {
+    font-size: toRem(30);
+    line-height: toRem(36);
+  }
+  h2 {
+    font-size: toRem(30);
+    line-height: toRem(36);
+  }
+  .btn-primary {
+    padding: 14px;
+    min-width: 174px;
+  }
+}
+@media (min-width: $breakpoint-md  + "px") {
+  h1 {
+    font-size: toRem(35);
+    line-height: toRem(40);
+  }
+  h2 {
+    font-size: toRem(35);
+    line-height: toRem(40);
+  }
+}
+@media (min-width: $breakpoint-lg  + "px") {
+  h1 {
+    font-size: toRem(45);
+    line-height: toRem(50);
+  }
+  h2 {
+    font-size: toRem(40);
+    line-height: toRem(46);
+  }
+  .btn {
+    font-size: toRem(18);
+    line-height: toRem(24);
+  }
+  .btn-primary-red {
+    padding: 14px 35px;
+  }
+  .form-control {
+    height: 52px;
+  }
+}
+@media (min-width: $breakpoint-xl  + "px") {
+  h1 {
+    font-size: toRem(55);
+    line-height: toRem(60);
+  }
+  .main-content {
+    padding-top: 76px;
+  }
+}
+@media (min-width: $breakpoint-xxl  + "px") {
+  .main-content {
+    padding-top: 92px;
+  }
+  h2 {
+    font-size: toRem(45);
+    line-height: toRem(50);
+  }
+}

@@ -1,0 +1,82 @@
+@import "variable.scss";
+.theme-dark .card {
+  background-color: $secondary-black-variant-2;
+}
+.card {
+  border-radius: 0;
+  border: none;
+  transition: all 0.4s;
+  margin-bottom: 16px;
+  &:hover {
+    background-color: $primary-red;
+    & .card-text {
+      color: $white;
+    }
+    & a {
+      border-color: $white;
+    }
+    & .card-body::after {
+      background-color: $white;
+    }
+  }
+  & .card-body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  & ::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    transform: translateY(-50%);
+    height: 44px;
+    background-color: $primary-red;
+    transition: all 0.4s;
+  }
+  & .card-text {
+    font-size: toRem(14);
+    line-height: toRem(20);
+    font-weight: fWeight(bold);
+    flex-basis: calc(100% - 36px);
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: calc(100% - 36px);
+  }
+  & a {
+    padding: 8px;
+    background-color: $primary-red;
+    border: 2px solid $primary-red;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    flex-basis: 36px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 36px;
+    & img {
+      height: 16px;
+      width: 16px;
+      display: block;
+    }
+  }
+}
+/* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
+@media (min-width: $breakpoint-sm  + "px") {
+  .card {
+    & .card-text {
+      font-size: toRem(18);
+      line-height: toRem(24);
+    }
+  }
+}
+@media (min-width: $breakpoint-md  + "px") {
+  .card {
+    height: calc(100% - 24px);
+    & .card-body {
+      padding: 40px 40px 36px 40px;
+    }
+  }
+}
